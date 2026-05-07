@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Folio — A Clean Blog</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Folio.</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">A minimal blog</p>
+      <h1 class="hero-title">Words worth<br><em>reading slowly.</em></h1>
+      <p class="hero-sub">Essays on design, technology, and the art of making things with intention.</p>
+    </div>
+  </section>
+
+  <!-- FEATURED POST -->
+  <section class="featured container">
+    <div class="featured-card" onclick="openPost('featured')">
+      <div class="featured-meta">
+        <span class="tag">Featured</span>
+        <span class="date">May 5, 2026</span>
+      </div>
+      <h2 class="featured-title">The Quiet Power of Doing Less</h2>
+      <p class="featured-excerpt">In a world obsessed with productivity hacks and constant output, there's a radical act hiding in plain sight — simply stopping. Not quitting, but pausing with purpose...</p>
+      <span class="read-more">Read Article →</span>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER -->
+  <section class="controls container">
+    <input type="text" id="searchInput" class="search-box" placeholder="Search articles..." />
+    <div class="filter-tabs" id="filterTabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="design">Design</button>
+      <button class="tab" data-filter="tech">Technology</button>
+      <button class="tab" data-filter="life">Life</button>
+    </div>
+  </section>
+
+  <!-- POSTS GRID -->
+  <section class="posts-grid container" id="postsGrid">
+    <!-- JS rendered -->
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about container" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="eyebrow">About</p>
+        <h2>A space for<br>slow thinking.</h2>
+        <p>This blog is a collection of essays and notes by someone who believes the best ideas come from sitting quietly with a problem long enough. No listicles. No hot takes. Just writing.</p>
+      </div>
+      <div class="about-img">
+        <div class="img-placeholder">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="32" r="18" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 72c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact container" id="contact">
+    <p class="eyebrow">Contact</p>
+    <h2>Let's talk.</h2>
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Your email" required />
+      </div>
+      <textarea placeholder="Your message..." rows="5" required></textarea>
+      <button type="submit" class="btn-send">Send Message</button>
+    </form>
+    <div class="form-success" id="formSuccess">✓ Message sent! Thank you.</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo">Folio.</span>
+      <p>© 2026 Folio Blog. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Twitter</a>
+        <a href="#">RSS</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- POST MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
